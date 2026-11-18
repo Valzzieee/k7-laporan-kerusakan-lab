@@ -64,6 +64,19 @@
 
     function initLogin() {
         var form = $('#loginForm');
+        var usernameInput = $('#username');
+        var passwordInput = $('#password');
+        var error = $('#loginError');
+        function showLoginError(message) {
+            error.textContent = message;
+            error.hidden = false;
+            error.classList.add('show');
+        }
+        function clearLoginError() {
+            error.textContent = '';
+            error.hidden = true;
+            error.classList.remove('show');
+        }
         if (currentUser()) {
             var existing = currentUser();
             location.replace(existing.role === 'admin' ? 'admin.html' : 'index.html');
@@ -71,18 +84,33 @@
         }
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            var username = $('#username').value.trim().toLowerCase();
-            var password = $('#password').value;
+            var username = usernameInput.value.trim().toLowerCase();
+            var password = passwordInput.value;
+            clearLoginError();
+            usernameInput.removeAttribute('aria-invalid');
+            passwordInput.removeAttribute('aria-invalid');
+
+            if (!username) {
+                usernameInput.setAttribute('aria-invalid', 'true');
+                showLoginError('Nama pengguna wajib diisi.');
+                usernameInput.focus();
+                return;
+            }
+            if (!password) {
+                passwordInput.setAttribute('aria-invalid', 'true');
+                showLoginError('Kata sandi wajib diisi.');
+                passwordInput.focus();
+                return;
+            }
             var accounts = {
                 adminlab: { password: 'admin123', role: 'admin', nama: 'Administrator Lab' },
                 pelapor: { password: 'pelapor123', role: 'pelapor', nama: 'Pengguna Lab' }
             };
             var account = accounts[username];
-            var error = $('#loginError');
             if (!account || account.password !== password) {
-                error.textContent = 'Username atau password tidak sesuai.';
-                error.hidden = false;
-                error.classList.add('show');
+                usernameInput.setAttribute('aria-invalid', 'true');
+                passwordInput.setAttribute('aria-invalid', 'true');
+                showLoginError('Nama pengguna atau kata sandi tidak sesuai.');
                 return;
             }
             sessionStorage.setItem('kik_user', JSON.stringify({
@@ -92,6 +120,8 @@
             if (account.role === 'admin') location.href = 'admin.html';
             else location.href = next && !next.includes('admin.html') ? next : 'index.html';
         });
+        usernameInput.addEventListener('input', clearLoginError);
+        passwordInput.addEventListener('input', clearLoginError);
     }
 
     function initAdmin() {
@@ -170,10 +200,6 @@
     function summaryText(s) {
         return s.baik + ' komputer baik, ' + s.diperbaiki + ' sedang diperbaiki, ' + s.rusak + ' rusak';
     }
-
-    /* tahun di footer */
-    var yr = $('#year');
-    if (yr) yr.textContent = new Date().getFullYear();
 
     /* ==================================================================
        BERANDA
