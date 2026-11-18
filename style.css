@@ -174,7 +174,7 @@ h1, h2, h3 {
     margin-top: 64px;
     background: var(--ink);
     color: #DCE5FA;
-    border-top: 6px solid var(--amber);
+    border-top: 2px solid var(--amber);
 }
 @media (prefers-color-scheme: dark) {
     .site-footer { background: #070C1C; }
