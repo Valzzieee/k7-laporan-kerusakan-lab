@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Pelaporan Komputer Lab</title><link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head><body data-page="login">
+<main class="auth-wrap">
+  <section class="auth-card">
+    <img src="img/logo1.png" alt="Logo sekolah" class="auth-logo">
+    <p class="eyebrow">SMK BRANTAS KARANGKATES</p>
+    <h1>Masuk ke Sistem</h1>
+    <p class="auth-desc">Pelaporan dan monitoring kondisi komputer laboratorium.</p>
+    <form id="loginForm">
+      <div class="form-group"><label for="username">Username</label><input id="username" autocomplete="username" required placeholder="Masukkan username"></div>
+      <div class="form-group"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="Masukkan password"></div>
+      <p id="loginError" class="form-error" hidden></p>
+      <button class="btn" type="submit" style="width:100%">Login</button>
+    </form>
+    <div class="demo-account"><strong>Akun simulasi</strong><p>Admin: <code>adminlab</code> / <code>admin123</code></p><p>Pelapor: <code>pelapor</code> / <code>pelapor123</code></p></div>
+  </section>
+</main>
+<script src="data.js"></script><script src="script.js" defer></script>
+</body></html>

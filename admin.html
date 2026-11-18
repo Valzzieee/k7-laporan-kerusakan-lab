@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Admin | Pelaporan Komputer Lab</title><link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head><body data-page="admin">
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="index.html"><img src="img/logo1.png" alt=""><span class="brand-text"><strong>Pelaporan Komputer</strong><small>SMK Brantas Karangkates</small></span></a>
+<nav class="nav"><a href="index.html">Beranda</a><a href="list.html">Lihat Lab</a><a href="admin.html" aria-current="page">Dashboard</a></nav>
+</div></header>
+<main class="wrap admin-wrap">
+<div class="page-head"><p class="eyebrow">PANEL PENGELOLA</p><h1>Dashboard Admin Lab</h1><p>Kelola status komputer dan tindak lanjuti laporan kerusakan.</p></div>
+<section class="admin-section">
+<div class="admin-section-head"><div><h2>Kelola kondisi komputer</h2><p>Pilih laboratorium, lalu ubah kondisi komputer yang ingin diperbarui.</p></div>
+<select id="adminLab" aria-label="Pilih laboratorium"></select></div>
+<p id="adminLabSummary" class="admin-summary"></p>
+<div id="adminComputers" class="admin-computer-grid"></div>
+</section>
+<section class="admin-section">
+<div class="admin-section-head"><div><h2>Laporan masuk</h2><p>Perbarui status penanganan setiap laporan.</p></div></div>
+<div class="table-scroll"><table class="admin-table"><thead><tr><th>Nomor</th><th>Pelapor</th><th>Lokasi</th><th>Keluhan</th><th>Status</th><th>Ubah status</th></tr></thead><tbody id="adminReports"></tbody></table></div>
+</section>
+</main>
+<footer class="site-footer"><div class="wrap"><div class="f-bottom">© 2026 SMK Brantas Karangkates</div></div></footer>
+<script src="data.js"></script><script src="script.js" defer></script>
+</body></html>
