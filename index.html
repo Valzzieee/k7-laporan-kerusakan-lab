@@ -1,84 +1,45 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pelaporan Komputer Lab | SMK Brantas Karangkates</title>
-    <meta name="description" content="Lihat kondisi komputer di lab SMK Brantas Karangkates dan laporkan komputer yang bermasalah.">
-    <link rel="icon" href="img/logo1.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body data-page="home">
-
-    <div id="loading-screen">
-        <img src="img/logo1.png" alt="Logo SMK Brantas Karangkates" class="loading-logo">
-        <div class="loading-spinner"></div>
-        <p class="loading-text">Memuat halaman...</p>
-    </div>
-
-    <header class="site-header">
-        <div class="wrap header-in">
-            <a class="brand" href="index.html">
-                <img src="img/logo1.png" alt="" width="44" height="44">
-                <span class="brand-text">
-                    <strong>Pelaporan Komputer</strong>
-                    <small>SMK Brantas Karangkates</small>
-                </span>
-            </a>
-            <nav class="nav" aria-label="Menu utama">
-                <a href="index.html" aria-current="page">Beranda</a>
-                <a href="list.html">Lihat</a>
-                <a href="form.html" class="nav-cta">Lapor</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="wrap">
-                <h1>Cek komputer lab, laporkan yang bermasalah.</h1>
-                <p class="hero-lead">Lihat komputer mana yang baik, sedang diperbaiki, atau rusak sebelum kelas dimulai. Menemukan masalah? Kirim laporan dalam satu menit.</p>
-
-                <div class="menu-grid">
-                    <a class="menu-card lihat" href="list.html">
-                        <span class="menu-go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-                        <span class="menu-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="10" width="38" height="26" rx="3.5"/><path d="M23 36v9M13 46h20"/><rect x="42" y="18" width="16" height="34" rx="3.5"/><rect x="46.5" y="23" width="7" height="7" rx="1.5"/><path d="M50 43h.01"/></svg></span>
-                        <div>
-                            <h2>Lihat</h2>
-                            <p>Cek kondisi komputer di setiap lab.</p>
-                        </div>
-                    </a>
-                    <a class="menu-card lapor" href="form.html">
-                        <span class="menu-go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-                        <span class="menu-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M26 56h-8a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4h18l12 12v8"/><path d="M36 8v12h12"/><path d="M48 32l8 8-20 20-10 2 2-10z"/></svg></span>
-                        <div>
-                            <h2>Lapor</h2>
-                            <p>Kirim laporan komputer yang rusak.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <section class="summary" aria-labelledby="sumTitle">
-                    <div class="summary-head">
-                        <h2 id="sumTitle">Kondisi seluruh komputer</h2>
-                        <a href="list.html">Lihat per lab</a>
-                    </div>
-                    <div id="summaryBar" class="bar" role="img" aria-label="Ringkasan kondisi komputer"></div>
-                    <ul id="summaryLegend" class="summary-legend"></ul>
-                </section>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="wrap">
-            <div class="f-bottom">Copyright &copy;2026 - Kelompok 7</div>
-        </div>
-    </footer>
-    <script src="data.js"></script>
-    <script src="script.js" defer></script>
-</body>
-</html>
+<html lang="id"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Pelaporan Komputer Lab</title><link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head><body data-page="login">
+<main class="auth-wrap">
+  <section class="auth-card">
+    <img src="img/logo1.png" alt="Logo sekolah" class="auth-logo">
+    <p class="eyebrow">SMK BRANTAS KARANGKATES</p>
+    <h1>Masuk ke Sistem</h1>
+    <p class="auth-desc">Pelaporan dan monitoring kondisi komputer laboratorium.</p>
+    <form id="loginForm" novalidate>
+      <div class="form-group"><label for="username">Nama pengguna</label><input id="username" autocomplete="username" required aria-describedby="loginError" placeholder="Masukkan nama pengguna"></div>
+      <div class="form-group"><label for="password">Kata sandi</label><input id="password" type="password" autocomplete="current-password" required aria-describedby="loginError" placeholder="Masukkan kata sandi"></div>
+      <p id="loginError" class="form-error" role="alert" hidden></p>
+      <button class="btn" type="submit" style="width:100%">Login</button>
+    </form>
+    <div class="demo-account"><strong>Akun simulasi</strong><p>Admin: <code>adminlab</code> / <code>admin123</code></p><p>Pelapor: <code>pelapor</code> / <code>pelapor123</code></p></div>
+  </section>
+</main>
+<script src="data.js"></script><script src="script.js" defer></script>
+</body></html><!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Pelaporan Komputer Lab</title><link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head><body data-page="login">
+<main class="auth-wrap">
+  <section class="auth-card">
+    <img src="img/logo1.png" alt="Logo sekolah" class="auth-logo">
+    <p class="eyebrow">SMK BRANTAS KARANGKATES</p>
+    <h1>Masuk ke Sistem</h1>
+    <p class="auth-desc">Pelaporan dan monitoring kondisi komputer laboratorium.</p>
+    <form id="loginForm" novalidate>
+      <div class="form-group"><label for="username">Nama pengguna</label><input id="username" autocomplete="username" required aria-describedby="loginError" placeholder="Masukkan nama pengguna"></div>
+      <div class="form-group"><label for="password">Kata sandi</label><input id="password" type="password" autocomplete="current-password" required aria-describedby="loginError" placeholder="Masukkan kata sandi"></div>
+      <p id="loginError" class="form-error" role="alert" hidden></p>
+      <button class="btn" type="submit" style="width:100%">Login</button>
+    </form>
+    <div class="demo-account"><strong>Akun simulasi</strong><p>Admin: <code>adminlab</code> / <code>admin123</code></p><p>Pelapor: <code>pelapor</code> / <code>pelapor123</code></p></div>
+  </section>
+</main>
+<script src="data.js"></script><script src="script.js" defer></script>
+</body></html>
