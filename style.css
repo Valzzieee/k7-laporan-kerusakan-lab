@@ -174,7 +174,7 @@ h1, h2, h3 {
     margin-top: 64px;
     background: var(--ink);
     color: #DCE5FA;
-    border-top: 2px solid var(--amber);
+    border-top: 6px solid var(--amber);
 }
 @media (prefers-color-scheme: dark) {
     .site-footer { background: #070C1C; }
@@ -671,6 +671,7 @@ fieldset { border: 0; padding: 0; min-width: 0; }
 .auth-desc{text-align:center;color:var(--ink-2);margin:10px 0 26px}
 .auth-card .form-group{display:grid;gap:7px;margin-bottom:16px}
 .auth-card input,.admin-section select{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:11px;background:var(--bg);color:var(--ink);font:inherit}
+.auth-card input[aria-invalid="true"]{border-color:var(--bad);box-shadow:0 0 0 3px var(--bad-soft)}
 .demo-account{margin-top:22px;padding:14px;background:var(--tint);border-radius:12px;font-size:13px;color:var(--ink-2)}
 .demo-account strong{display:block;color:var(--ink);margin-bottom:6px}
 .nav-logout{margin-left:8px;border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:8px 12px;cursor:pointer;font-weight:600}
